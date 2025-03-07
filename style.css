@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0A1428;
+    color: #cdbe91;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Barra de navegación */
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0A1428;
+    padding: 0.5vw 2vw;
+    border-bottom: 1px solid #1e2328;
+    height: 8vh;
+  }
+
+  .navigation ul {
+    display: flex;
+    list-style: none;
+  }
+
+  .navigation li {
+    margin-right: 2vw;
+    padding: 1vh 0;
+    font-size: 0.9vw;
+    font-weight: 600;
+    cursor: pointer;
+    color: #787774;
+    white-space: nowrap;
+  }
+
+  .navigation li.active {
+    color: #cdbe91;
+    border-bottom: 2px solid #cdbe91;
+  }
+
+  .search input {
+    background: transparent;
+    border: none;
+    color: #cdbe91;
+    padding: 0.5vh;
+    width: 12vw;
+    font-size: 0.8vw;
+  }
+
+  /* Contenido del perfil */
+.profile-content {
+  display: flex;
+  position: relative;
+  height: 92vh;
+  background-image: linear-gradient(rgba(10, 20, 40, 0.7), rgba(10, 20, 40, 0.9)), url('img/imagenes/WhatsApp\ Image\ 2025-01-24\ at\ 2.23.38\ AM.jpeg ');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Gradiente en los bordes */
+.profile-content::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Ocupa toda la caja */
+  background: radial-gradient(circle, rgba(10, 20, 40, 0) 50%, rgba(10, 20, 40, 0.9) 100%);
+  pointer-events: none; /* Evita que interfiera con otros elementos */
+}
+
+
+  /* Sidebar */
+  .sidebar {
+    width: 15vw;
+    padding: 2vh 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .level {
+    background-color: #111;
+    color: #cdbe91;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 2vh;
+    font-size: 1vw;
+  }
+
+  .profile-icon {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background-image: url('img/imagenes/WhatsApp%20Image%202025-02-13%20at%207.52.28%20PM.jpeg');
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #cdbe91;
+    overflow: hidden;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .username {
+    color: white;
+    font-size: 1.5vw;
+    margin-bottom: 2vh;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1vw;
+  }
+
+  .social-icons .icon {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    background-color: #1e2328;
+  }
+
+  /* Contenido principal */
+  .main-content {
+    flex: 1;
+    padding: 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Fila de estadísticas */
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+  }
+
+  .stats-row img {
+    width: 11vw;
+    height: 11vw;
+  }
+
+  .stat-card {
+    border-radius: 5px;
+    padding: 1.5vh 1vw;
+    text-align: center;
+    width: 18%;
+  }
+
+  .stat-card h3 {
+    font-size: 0.8vw;
+    font-weight: 600;
+    margin-bottom: 1vh;
+    color: #787774;
+  }
+
+  .stat-card p {
+    font-size: 1vw;
+    color: white;
+    margin-bottom: 1vh;
+  }
+
+  
+
+  .rank-badge {
+    background-color: #cdbe91;
+    color: #0A1428;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1vw;
+  }
+
+  .score {
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  /* Media queries para ajustar a pantallas más pequeñas */
+  @media (max-width: 1024px) {
+    .navigation li {
+      font-size: 1.2vw;
+      margin-right: 1.5vw;
+    }
+    
+    .sidebar {
+      width: 20vw;
+    }
+    
+    .profile-icon {
+      width: 15vw;
+      height: 15vw;
+    }
+    
+    .username {
+      font-size: 2vw;
+    }
+    
+    .stat-card h3 {
+      font-size: 1.2vw;
+    }
+    
+    .score {
+      font-size: 2.5vw;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navigation {
+      flex-direction: column;
+      height: auto;
+      padding: 1vh;
+    }
+    
+    .navigation ul {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 1vh;
+    }
+    
+    .navigation li {
+      font-size: 1.5vw;
+      margin-right: 0;
+    }
+    
+    .search {
+      width: 100%;
+    }
+    
+    .search input {
+      width: 100%;
+    }
+    
+    .profile-content {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .sidebar {
+      width: 100%;
+      padding: 2vh;
+    }
+    
+    .profile-icon {
+      width: 20vw;
+      height: 20vw;
+    }
+    
+    .stats-row {
+      flex-wrap: wrap;
+      gap: 1vh;
+    }
+    
+    .stat-card {
+      width: 48%;
+    }
+    
+    .stat-card h3 {
+      font-size: 2vw;
+    }
+    
+    .score {
+      font-size: 4vw;
+    }
+    
+    .badges-row {
+      flex-wrap: wrap;
+    }
+    
+    .badge {
+      width: 10vw;
+      height: 10vw;
+    }
+  }
