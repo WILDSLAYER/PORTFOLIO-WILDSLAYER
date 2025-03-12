@@ -116,7 +116,12 @@
             .then(data => {
                 document.getElementById("respuesta").innerHTML = data; // Mostrar respuesta del servidor
                 document.getElementById("miFormulario").reset(); 
-            })
+            }
+            setTimeout(() => {
+                document.getElementById("respuesta").innerHTML= "";
+            }, 5000);
+        
+            )
             .catch(error => console.error("Error:", error));
         });
     </script>
