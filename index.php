@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet"> <!-- Movido aquí -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet"> 
     <title>PORTAFOLIO || WILDER</title>
 </head>
 <body>
     <header>
-        <a href="#" class="logo">WILDER</a>
+        <a href="#home" class="logo">WILDER</a>
         <nav>
             <a href="#home">Home</a>
             <a href="#projects">Projects</a>
@@ -27,25 +27,30 @@
         <div class="home-content">
             <h1>Hola, soy <span>Wilder</span></h1>
             <h3 class="typing-text">Y soy <span></span></h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae fugiat culpa quaerat voluptate alias. Non ipsum dicta soluta eum dolorem placeat nostrum ratione possimus quaerat. Nulla molestias repellendus cumque quia?</p>
+            <p>Apasionado por la tecnología y el desarrollo de software, me dedico a crear proyectos que combinan funcionalidad y buen diseño.</p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/wilder-care-velasquez-9b4498336/" target="_blank" ><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/WILDSLAYER" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com/WILDSLAYER_dev" target="_blank" ><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://x.com/WILDSLAYER_dev" target="_blank" ><i class="fa-brands fa-x-twitter"></i></i></a>
             </div>
-            <a href="#" class="btn">hire me</a>
+            <a class="btn">hire me</a>
         </div>
     </section>
 
      <!-- projects Section -->
      <section id="projects" class="projects">
-        <h2 class="heading">My <span>Projects</span></h2>
+        <h2 class="heading">Mis <span>Proyectos</span></h2>
         <div class="projects-container">
             <div class="projects-box">
-                <i class="fa-solid fa-code"></i>
+                <img src="" alt="">
                 <h3>Web Development</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                <div class="tecnology-icons">
+                    <i class="fa-brands fa-html5"></i>
+                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-brands fa-js"></i>
+                </div>
             </div>
             <div class="projects-box">
                 <i class="fa-solid fa-paintbrush"></i>
@@ -63,7 +68,7 @@
 
     <!-- Education Section -->
     <section id="education" class="education">
-        <h2 class="heading">My <span>Education</span></h2>
+        <h2 class="heading">Mis <span>Estudios</span></h2>
         <div class="education-container">
             <div class="education-box">
                 <i class="fa-solid fa-graduation-cap"></i>
@@ -85,20 +90,35 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-        <form action="#">
+        <h2 class="heading">Contacta<span>me</span></h2>
+        <form id="miFormulario" action="enviar.php" method="POST">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
+                <input type="text" name="nombre" placeholder="Nombre completo">
             </div>
             <div class="input-box">
-                <input type="email" placeholder="Email Address">
+                <input type="email" name="email" placeholder="Correo electrónico">
             </div>
-            <div class="input-box">
-                <input type="text" placeholder="Subject">
-            </div>
-            <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
-            <button type="submit" class="btn">Send Message</button>
+            <textarea name="asunto" cols="30" rows="10" placeholder="Mensaje"></textarea>
+            <div id="respuesta"></div>
+            <button type="submit" class="btn">enviar</button>
         </form>
-    </section>
+    <script>
+        document.getElementById("miFormulario").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita la recarga de la página
+
+            let formData = new FormData(this);
+
+            fetch("enviar.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("respuesta").innerHTML = data; // Mostrar respuesta del servidor
+                document.getElementById("miFormulario").reset(); 
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
 </body>
 </html>
