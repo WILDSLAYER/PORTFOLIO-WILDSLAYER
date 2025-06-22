@@ -22,7 +22,7 @@
     </header>
     <section class="home" id="home">
         <div class="home-img">
-            <img src="img/image.png " alt="">
+            <img src="img/img.png" alt="Wilder smiles confidently while standing in a modern workspace with computer equipment in the background. He wears a casual shirt and appears approachable and friendly. The environment feels professional and welcoming.">
         </div>
         <div class="home-content">
             <h1>Hola, soy <span>Wilder</span></h1>
