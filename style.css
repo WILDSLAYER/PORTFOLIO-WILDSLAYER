@@ -299,6 +299,16 @@ section {
     font-size: 1.6rem;
 }
 
+.projects-box img {
+    width: 100%;
+    height: auto; /* Altura automática basada en la proporción */
+    max-height: 250px; /* Altura máxima para controlar el tamaño */
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
 .tecnology-icons {
     display: flex;
     justify-content: space-around;
